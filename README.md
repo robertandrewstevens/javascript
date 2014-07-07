@@ -3,4 +3,4 @@ javascript
 
 JavaScript
 
-Collection of JavaScript code for variance projects and tutorials.
+Collection of JavaScript code for various projects and tutorials.
