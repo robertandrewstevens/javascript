@@ -1,0 +1,121 @@
++++++++++++++++++++++++++++++++++++++++++++
+More (obscure) control structures / control
++++++++++++++++++++++++++++++++++++++++++++
+
+In \\cbasics, a number of control statements were introduced, such as
+|while|, |for|, and |break|. To keep things simple, I left out some
+others, which, in my experience, are a lot less useful. This appendix
+briefly describes these missing control statements.
+
+---
+
+First, there is _|do|_. |do| works like |while|, but instead of
+executing the loop body zero or more times, it executes it one or more
+times. A |do| loop looks like this:
+
+> do {
+>   var answer = prompt("Say 'moo'.", "");
+>   print("You said '", answer, "'.");
+> } while (answer != "moo");
+
+To emphasise the fact that the condition is only checked *after* the
+loop has run once, it is written at the end of the loop's body.
+
+---
+
+Next, there is _|continue|_. This one is closely related to |break|,
+and can be used in the same places. While |break| jumps *out* of a
+loop and causes the program to proceed after the loop, |continue|
+jumps to the next iteration of the loop.
+
+> for (var i = 0; i < 10; i++) {
+>   if (i % 3 != 0)
+>     continue;
+>   print(i, " is divisible by three.");
+> }
+
+A similar effect can usually be produced using just |if|, but there
+are cases where |continue| looks nicer.
+
+---
+
+When there is a loop sitting inside another loop, a |break| or
+|continue| statement will affect only the inner loop. Sometimes you
+want to jump out of the *outer* loop. To be able to refer to a
+specific loop, loop statements can be _label_led. A label is a name
+(any valid variable name will do), followed by a colon (|:|).
+
+> outer: for (var sideA = 1; sideA < 10; sideA++) {
+>   inner: for (var sideB = 1; sideB < 10; sideB++) {
+>     var hypotenuse = Math.sqrt(sideA * sideA + sideB * sideB);
+>     if (hypotenuse % 1 == 0) {
+>       print("A right triangle with straight sides of length ",
+>             sideA, " and ", sideB, " has a hypotenuse of ",
+>             hypotenuse, ".");
+>       break outer;
+>     }
+>   }
+> }
+
+---
+
+Next, there is a construct called _|switch|_ which can be used to
+choose which code to execute based on some value. This is a very
+useful thing to do, but the syntax JavaScript uses for this (which it
+took from the C programming language) is so clumsy and ugly that I
+usually prefer to use a chain of |if| statements instead.
+
+> function weatherAdvice(weather) {
+>   switch(weather) {
+>     case "rainy":
+>       print("Remember to bring an umbrella.");
+>       break;
+>     case "sunny":
+>       print("Dress lightly.");
+>     case "cloudy":
+>       print("Go outside.");
+>       break;
+>     default:
+>       print("Unknown weather type: ", weather);
+>       break;
+>   }
+> }
+>
+> weatherAdvice("sunny");
+
+Inside the block opened by |switch|, you can write a number of |case|
+labels. The program will jump to the label that corresponds to the
+value that |switch| was given (comparing the values with an equivalent
+of |===|, so without automatic type conversion), or to |default| if no
+matching value is found. Then it start executing statements there, and
+*continues* past other labels, until it reaches a |break| statement.
+In some cases, such as the |"sunny"| case in the example, this can be
+used to share some code between cases (it recommends going outside for
+both sunny and cloudy weather). Most of the time, this just adds a lot
+of ugly |break| statements, or causes problems when you forget to add
+one.
+
+Like loops, |switch| statements can be given a label.
+
+---
+
+Finally, there is a keyword named _|with|_. I've never actually *used*
+this in a real program, but I have seen other people use it, so it is
+useful to know what it is. Code using |with| looks like this:
+
+> var scope = "outside";
+> var object = {name: "Ignatius", scope: "inside"};
+> with(object) {
+>   print("Name == ", name, ", scope == ", scope);
+>   name = "Raoul";
+>   var newVariable = 49;
+> }
+> show(object.name);
+> show(newVariable);
+
+Inside the block, the properties of the object given to |with| act as
+variables. Newly introduced variables are *not* added as properties to
+this object though. I assume the idea behind this construct was that
+it could be useful in methods that make lots of use of the properties
+of their object. You could start such a method with |with(this)
+{...}|, and not have to write |this| all the time after that.
