@@ -4,4 +4,6 @@ by Marijn Haverbeke
 
 Eloquent JavaScript is a digital book providing a comprehensive introduction (tutorial) to the JavaScript programming language. Apart from a bookful of text, it contains plenty of example programs, and an environment to try them out and play with them.
 
-The book is aimed at the beginning programmer ― people with prior programming experience might also get something out of it, but they should not read chapters 2 to 5 too closely, because most of the concepts discussed there will probably be nothing new to them. Do make sure you read the end of the first chapter, which has some essential information about the book itself. The book is freely available, and may be used (as a whole or in parts) in any way you see fit, as long as I am credited as the original author.
+The book is aimed at the beginning programmer ― people with prior programming experience might also get something out of it, but they should not read chapters 2 to 5 too closely, because most of the concepts discussed there will probably be nothing new to them. Do make sure you read the end of the first chapter, which has some essential information about the book itself. 
+
+The book is freely available, and may be used (as a whole or in parts) in any way you see fit, as long as I am credited as the original author.
