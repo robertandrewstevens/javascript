@@ -1,0 +1,46 @@
+---
+title: "EloquentJavaScript00.Rmd"
+author: "Robert A. Stevens"
+date: "July 4, 2014"
+output: pdf_document
+---
+
+**Eloquent JavaScript:  An opinionated guide to programming**
+
+by Marijn Haverbeke
+
+http://eloquentjavascript.net/Eloquent%20JavaScript.pdf
+
+*Eloquent JavaScript* is a digital book providing a comprehensive introduction (tutorial) to the JavaScript programming language. Apart from a bookfull of text, it contains plenty of example programs, and an environment to try them out and play with them.  The book is aimed at the beginning programmer - people with prior programming experience might also get something out of it, but they should not read chapters 2 to 5 too closely, because most of the concepts discussed there will probably be nothing new to them. Do make sure you read the end of the first chapter, which has some essential information about the book itself.  The book is freely available, and may be used (as a whole or in parts) in any way you see fit, as long as I am credited as the original author.
+
+Chapter  1:  Introduction
+
+Chapter  2:  Basic JavaScript:  values, variables, and control flow
+
+Chapter  3:  Functions
+
+Chapter  4:  Data structures:  Objects and Arrays
+
+Chapter  5:  Error Handling
+
+Chapter  6:  Functional Programming
+
+Chapter  7:  Searching
+
+Chapter  8:  Object-oriented Programming
+
+Chapter  9:  Modularity
+
+Chapter 10:  Regular Expressions
+
+Chapter 11:  Web programming:  A crash course
+
+Chapter 12:  The Document-Object Model
+
+Chapter 13:  Browser Events
+
+Chapter 14:  HTTP requests
+
+Appendix 1:  More (obscure) control structures
+
+Appendix 2:  Binary Heaps
