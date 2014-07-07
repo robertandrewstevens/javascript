@@ -1,4 +1,4 @@
-Eloquent JavaScript:  
+Eloquent JavaScript:  An opinionated guide to programming
 
 by Marijn Haverbeke
 
