@@ -181,11 +181,7 @@ var child = parentFunction();
 child();
 ```
 
-**parentFunction** *returns* its internal function, and the code at the
-bottom calls this function. Even though **parentFunction** has finished
-executing at this point, the local environment where **variable** has
-the value **"local"** still exists, and **childFunction** still uses it.
-This phenomenon is called closure.
+**parentFunction** *returns* its internal function, and the code at the bottom calls this function. Even though **parentFunction** has finished executing at this point, the local environment where **variable** has the value **"local"** still exists, and **childFunction** still uses it. This phenomenon is called closure.
 
 ---
 
@@ -245,10 +241,7 @@ But I was talking about recursion. A concept closely related to recursion is a t
 
 The fact that it is called 'stack' has to do with the fact that, as we saw, a function body can again call a function. Every time a function is called, another context has to be stored. One can visualise this as a stack of contexts. Every time a function is called, the current context is thrown on top of the stack. When a function returns, the context on top is taken off the stack and resumed.
 
-This stack requires space in the computer's memory to be stored. When
-the stack grows too big, the computer will give up with a message like
-"out of stack space" or "too much recursion". This is something that
-has to be kept in mind when writing recursive functions.
+This stack requires space in the computer's memory to be stored. When the stack grows too big, the computer will give up with a message like "out of stack space" or "too much recursion". This is something that has to be kept in mind when writing recursive functions.
 
 ```
 function chicken() {
