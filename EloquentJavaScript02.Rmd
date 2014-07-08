@@ -290,7 +290,7 @@ When a function produces a value, it is said to return it. Because things that p
 ￼alert(Math.min(2, 4) + 100);
 ```
 
-Chapter 3 discusses writing your own functions.
+**Chapter 3** discusses writing your own functions.
 
 ---
 
